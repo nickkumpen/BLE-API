@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: nick
  * Date: 23/03/16
- * Time: 6:09
+ * Time: 8:16
  */
 // src/AppBundle/Entity/Product.php
 
@@ -13,10 +13,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Products")
+ * @ORM\Table(name="Product")
  */
 
-class Products
+class Product
 {
     /**
      * @ORM\Column(type="integer")
@@ -26,40 +26,70 @@ class Products
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="text", length = 36)
+     */
+    protected $beacon;
+
+    /**
+     * @ORM\Column(type="string", length = 255)
      */
     protected $name;
 
     /**
-     * @return mixed
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @return mixed
+     * Get id
+     *
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-    
-    
 
+    /**
+     * Set beacon
+     *
+     * @param string $beacon
+     *
+     * @return Product
+     */
+    public function setBeacon($beacon)
+    {
+        $this->beacon = $beacon;
+
+        return $this;
+    }
+
+    /**
+     * Get beacon
+     *
+     * @return string
+     */
+    public function getBeacon()
+    {
+        return $this->beacon;
+    }
 
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return Products
+     * @return Product
      */
     public function setName($name)
     {
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

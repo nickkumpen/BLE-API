@@ -3,20 +3,17 @@
  * Created by PhpStorm.
  * User: nick
  * Date: 23/03/16
- * Time: 5:55
+ * Time: 8:17
  */
 // src/AppBundle/Entity/Warehouse.php
 
 namespace AppBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * @ORM\Entity
- * @ORM\Table(name="Warehouses")
+ * @ORM\Table(name="Warehouse")
  */
-
-class Warehouses
+class Warehouse
 {
     /**
      * @ORM\Column(type="integer")
@@ -24,13 +21,11 @@ class Warehouses
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
+    
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length = 255)
      */
     protected $name;
-
-  
 
 
     /**
@@ -48,7 +43,7 @@ class Warehouses
      *
      * @param string $name
      *
-     * @return Warehouses
+     * @return Warehouse
      */
     public function setName($name)
     {
