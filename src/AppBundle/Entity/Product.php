@@ -1,0 +1,65 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: nick
+ * Date: 23/03/16
+ * Time: 6:09
+ */
+// src/AppBundle/Entity/Product.php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Products")
+ */
+
+class Products
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $name;
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    
+    
+
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Products
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+}
