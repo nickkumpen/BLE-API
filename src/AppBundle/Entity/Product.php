@@ -15,58 +15,56 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="Product")
  */
-
 class Product
 {
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text", length = 36, options = {"fixed" = TRUE})
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
-    /**
-     * @ORM\Column(type="text", length = 36)
-     */
-    protected $beacon;
 
     /**
      * @ORM\Column(type="string", length = 255)
      */
     protected $name;
-
+    
     /**
-     * Get id
-     *
-     * @return integer
+     * @ORM\ManyToMany(targetEntity="Warehouse", inversedBy="products")
+     * @ORM\JoinTable(name="warehouse_products")
      */
-    public function getId()
+    protected $warehouses;
+    
+   
+    /**
+     * Constructor
+     */
+    public function __construct()
     {
-        return $this->id;
+        $this->warehouses = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Set beacon
+     * Set id
      *
-     * @param string $beacon
+     * @param string $id
      *
      * @return Product
      */
-    public function setBeacon($beacon)
+    public function setId($id)
     {
-        $this->beacon = $beacon;
+        $this->id = $id;
 
         return $this;
     }
 
     /**
-     * Get beacon
+     * Get id
      *
      * @return string
      */
-    public function getBeacon()
+    public function getId()
     {
-        return $this->beacon;
+        return $this->id;
     }
 
     /**
@@ -91,5 +89,39 @@ class Product
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Add warehouse
+     *
+     * @param \AppBundle\Entity\Warehouse $warehouse
+     *
+     * @return Product
+     */
+    public function addWarehouse(\AppBundle\Entity\Warehouse $warehouse)
+    {
+        $this->warehouses[] = $warehouse;
+
+        return $this;
+    }
+
+    /**
+     * Remove warehouse
+     *
+     * @param \AppBundle\Entity\Warehouse $warehouse
+     */
+    public function removeWarehouse(\AppBundle\Entity\Warehouse $warehouse)
+    {
+        $this->warehouses->removeElement($warehouse);
+    }
+
+    /**
+     * Get warehouses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getWarehouses()
+    {
+        return $this->warehouses;
     }
 }
