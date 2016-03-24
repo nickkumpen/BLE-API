@@ -5,14 +5,14 @@
  * Date: 24/03/16
  * Time: 2:10
  */
-// src/AppBundle/Entity/Product.php
+// src/AppBundle/Entity/WarehouseProductHistory.php
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="WarehouseProductStrength")
+ * @ORM\Table(name="WarehouseProductHistory")
  */
 
 class WarehouseProductStrength
@@ -32,9 +32,16 @@ class WarehouseProductStrength
     protected $product;
     
     /**
-     * @ORM\Column(type="datetime')
+     * @ORM\Column(type="datetime")
      * @ORM\Id
      */
+    protected $time;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $strength;
+    
     
 
 
