@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Product
 {
     /**
-     * @ORM\Column(type="text", length = 36, options = {"fixed" = TRUE})
+     * @ORM\Column(type="string", length = 36, options = {"fixed" = TRUE})
      * @ORM\Id
      */
     protected $id;
