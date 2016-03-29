@@ -1,23 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nick
- * Date: 29/03/16
- * Time: 4:23
- */
-// src/Appbundle/Controller/ProductList.php
+
+// src/AppBundle/Controller/DefaultController.php
 
 namespace AppBundle\Controller;
-use AppBundle\Entity\Product;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use AppBundle\Entity\camionet1;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class ProductList extends Controller
+class DefaultController extends Controller
 {
-    /**
-     * @Route("/product")
-     */
+    
     public function listAction()
     {
         $product = $this->getDoctrine()
@@ -27,5 +21,4 @@ class ProductList extends Controller
         dump($product);
         return $this->render("base.html.twig", array("product" => $product));
     }
-
 }
