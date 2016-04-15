@@ -7,7 +7,18 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}<code>{% for Product in product %}{{ Product.name }} {{ Product.id }}<br/>{% endfor %}</code>{% endblock %}
+        {% block body %}
+            <code>
+            {% for Product in product %}
+            {{ Product.name }}
+                <a href="{{  path('product_edit',{'id':Product.id}) }}">
+                {{ Product.id }}
+                </a>
+
+                <br/>
+            {% endfor %}
+            </code>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
