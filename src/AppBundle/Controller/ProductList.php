@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ProductList extends Controller
 {
     /**
-     * @Route("/productlist")
+     * @Route("/productlist", name="product_list")
      */
     public function listAction()
     {
@@ -70,7 +70,7 @@ class ProductList extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($product);
             $em->flush();
-            return new Response('success');
+            return $this->redirectToRoute('product_list');
         }
         return $this->render('default/new.html.twig', array('form' => $form->createView(),
         ));

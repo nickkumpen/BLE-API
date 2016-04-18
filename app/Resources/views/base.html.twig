@@ -10,13 +10,13 @@
         {% block body %}
             <code>
             {% for Product in product %}
-            {{ Product.name }}
-                <a href="{{  path('product_edit',{'id':Product.id}) }}">
-                {{ Product.id }}
-                </a>
-
+                <li>{{ Product.name }}</li>
+                    <a href="{{ path('product_edit',{'id':Product.id}) }}">
+               <li>{{ Product.id }}</li>
+                    </a>
                 <br/>
             {% endfor %}
+            <a href="{{ path('product_add') }}">add new product</a>
             </code>
         {% endblock %}
         {% block javascripts %}{% endblock %}
