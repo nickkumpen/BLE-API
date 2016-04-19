@@ -30,7 +30,7 @@ class ProductList extends Controller
             ->findAll();
 
         dump($product);
-        return $this->render("base.html.twig", array("product" => $product));
+        return $this->render("List/Product.html.twig", array("product" => $product));
     }
 
     /**

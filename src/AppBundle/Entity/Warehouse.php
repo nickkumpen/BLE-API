@@ -16,9 +16,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Warehouse
 {
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * 
      */
     protected $id;
     
@@ -106,5 +106,19 @@ class Warehouse
     public function getProducts()
     {
         return $this->products;
+    }
+
+    /**
+     * Set id
+     *
+     * @param string $id
+     *
+     * @return Warehouse
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 }

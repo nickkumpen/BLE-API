@@ -37,7 +37,7 @@ class RegistrationController extends Controller
             $em->persist($user);
             $em->flush();
             
-            return $this->redirectToRoute('product_list');
+            return $this->redirectToRoute('login');
         }
         
         return $this->render(

@@ -1,11 +1,32 @@
 
 {# app/Resources/views/registration/register.html.twig#}
+<html>
 
-{{ form_start(form) }}
-    {{ form_row(form.username) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.plainPassword.first) }}
-    {{ form_row(form.plainPassword.second) }}
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Register!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-    <button type="submit">Register</button>
-{{ form_end(form) }}
+
+</head>
+<body>
+{% block body %}
+    <code>
+        <a href="{{ path('login') }}">Login</a><br/>
+        <a href="{{ path('product_list') }}">Products</a><br/>
+        <a href="{{ path('warehouse_list') }}">Warehouses</a><br/>
+        <a href="{{ path('user_registration') }}">Register</a><br/>
+        {{ form_start(form) }}
+            {{ form_row(form.username) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.plainPassword.first) }}
+            {{ form_row(form.plainPassword.second) }}
+
+            <button type="submit">Register</button>
+        {{ form_end(form) }}
+    </code>
+{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

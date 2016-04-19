@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Warehouses!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <style>
+        table {
+            width:30%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        table#t01 tr:nth-child(odd) {
+            background-color:#fff;
+        }
+        table#t01 th	{
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+{% block body %}
+    <code>
+        <a href="{{ path('login') }}">Login</a><br/>
+        <a href="{{ path('product_list') }}">Products</a><br/>
+        <a href="{{ path('warehouse_list') }}">Warehouses</a><br/>
+        <a href="{{ path('user_registration') }}">Register</a><br/>
+
+            <table id="t01">
+                <tr>
+                    <th>Name</th>
+                    <th>UUID</th>
+                </tr>
+                {% for Warehouse in warehouse %}
+                    <tr>
+                        <td>{{ Warehouse.name}}</td>
+                        <td><a href="{{ path('warehouse_edit',{'id':Warehouse.id}) }}">{{ Warehouse.id }}</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br/>
+            <a href="{{ path('warehouse_add') }}">add new warehouse</a>
+    </code>
+{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>
