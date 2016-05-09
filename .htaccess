@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Rewrite all other queries to the front controller.
+    RewriteRule ^[^w][^e][^b].+ /web/app.php [QSA,L]
+</IfModule>

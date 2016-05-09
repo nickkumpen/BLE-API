@@ -37,13 +37,10 @@ class RegistrationController extends Controller
             $em->persist($user);
             $em->flush();
             
-            return $this->redirectToRoute('login');
+            return $this->redirectToRoute('product_list');
         }
         
-        return $this->render(
-            'registration/register.html.twig',
-            array('form' => $form->createView())
-        );
+        return $this->render('registration/register.html.twig',array('form' => $form->createView()));
         
     }
 

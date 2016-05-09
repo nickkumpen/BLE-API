@@ -12,28 +12,31 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="WarehouseProductHistoryRepository")
  * @ORM\Table(name="WarehouseProductHistory")
  */
 class WarehouseProductHistory
 {
     /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    /**
      * @ORM\ManyToOne(targetEntity="Warehouse")
      * @ORM\JoinColumn(name="warehouse_id", referencedColumnName="id")
-     * @ORM\Id
      */
     protected $warehouse;
 
     /**
      * @ORM\ManyToOne(targetEntity="Product")
      * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
-     * @ORM\Id
      */
     protected $product;
 
     /**
      * @ORM\Column(type="datetime")
-     * @ORM\Id
      */
     protected $time;
 
@@ -42,6 +45,15 @@ class WarehouseProductHistory
      */
     protected $strength;
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set time
@@ -98,7 +110,7 @@ class WarehouseProductHistory
      *
      * @return WarehouseProductHistory
      */
-    public function setWarehouse(\AppBundle\Entity\Warehouse $warehouse)
+    public function setWarehouse(\AppBundle\Entity\Warehouse $warehouse = null)
     {
         $this->warehouse = $warehouse;
 
@@ -122,7 +134,7 @@ class WarehouseProductHistory
      *
      * @return WarehouseProductHistory
      */
-    public function setProduct(\AppBundle\Entity\Product $product)
+    public function setProduct(\AppBundle\Entity\Product $product = null)
     {
         $this->product = $product;
 

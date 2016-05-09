@@ -20,7 +20,6 @@ class Product
     /**
      * @ORM\Column(type="string", length = 36, options = {"fixed" = TRUE})
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="UUID")
      */
     protected $id;
 
@@ -111,5 +110,19 @@ class Product
     public function getWarehouses()
     {
         return $this->warehouses;
+    }
+
+    /**
+     * Set id
+     *
+     * @param string $id
+     *
+     * @return Product
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 }

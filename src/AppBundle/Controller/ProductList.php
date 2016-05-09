@@ -11,6 +11,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Product;
 use AppBundle\Entity\Warehouse;
 use AppBundle\Entity\WarehouseProductHistory;
+use AppBundle\Entity\WarehouseProductHistoryRepository;
 use AppBundle\Forms\ProductNewType;
 use AppBundle\Forms\ProductEditType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -22,15 +23,28 @@ class ProductList extends Controller
 {
     /**
      * @Route("/productlist", name="product_list")
+     * @return Response
      */
     public function listAction()
     {
-        $product = $this->getDoctrine()
+        $products = $this->getDoctrine()
             ->getRepository('AppBundle:Product')
-            ->findAll();
+            ->createQueryBuilder('p')
+            ->select('p, w')
+            ->leftJoin('p.warehouses', 'w')
+            ->addOrderBy('p.name', 'ASC')
+            ->addOrderBy('w.name', 'ASC')
+            ->getQuery()
+            ->getResult();
+        /**
+         * @var WarehouseProductHistoryRepository $repo
+         */
+//        $repo= $this->getDoctrine()->getRepository('AppBundle:WarehouseProductHistory');
 
-        dump($product);
-        return $this->render("List/Product.html.twig", array("product" => $product));
+        return $this->render("List/Product.html.twig", array(
+            "products" => $products,
+            "historyRepo" => $this->getDoctrine()->getRepository('AppBundle:WarehouseProductHistory'),
+        ));
     }
 
     /**

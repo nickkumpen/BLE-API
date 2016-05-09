@@ -27,7 +27,6 @@ class WarehouseList extends Controller
             ->getRepository('AppBundle:Warehouse')
             ->findAll();
         
-        dump($warehouse);
         return $this->render("List/Warehouse.html.twig", array("warehouse"=>$warehouse));
     }
     
