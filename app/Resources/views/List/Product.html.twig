@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <style>
         table {
-            width:30%;
+            width:%;
         }
         table, th, td {
             border: 1px solid black;
@@ -47,10 +47,11 @@
                 <tr>
                     <td>{{ product.name}}</td>
                     <td><a href="{{ path('product_edit',{'id':product.id}) }}">{{ product.id }}</a></td>
-                    <td>
+                    <td><a href="{{ path('product_history',{'id':product.id}) }}">
                         {% for warehouse in product.warehouses %}
                             {{ warehouse.name}} ({{ historyRepo.findLastRecordOfProductInWarehouse(warehouse, product).time|date('d/m/Y H:i:s') }}) {# check op last en br toevoegen en zo #}
                         {% endfor %}
+                        </a>
                     </td>
                 </tr>
             {% endfor %}

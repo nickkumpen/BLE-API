@@ -19,4 +19,5 @@ class WarehouseProductHistoryRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->findOneBy(array('warehouse' => $warehouse, 'product' => $product), array('time' => 'DESC'));
     }
+    
 }

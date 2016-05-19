@@ -9,19 +9,35 @@
 
 namespace AppBundle\Forms;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
-
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use AppBundle\Entity\Product;
 
 class ProductEditType extends AbstractType
 {
     public function buildForm (FormBuilderInterface $builder, array $options)
     {
+        $warehouses = $options['warehouse'];
         $builder
             ->add('id', TextType::class)
+            ->add('warehouses', ChoiceType::class, array('choices'=> $warehouses, 'choice_label' => function($value,$key,$index){
+                return $value->getName();
+                
+            }))
             ->add('name', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Edit Product'));
+    }
+
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'AppBundle\Entity\Product',
+            'warehouse' => null,
+        ));
     }
 
 }
