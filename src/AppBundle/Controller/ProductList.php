@@ -50,7 +50,7 @@ class ProductList extends Controller
      * @Route("/productlist/{id}", name="product_history")
      * @return Response
      */
-    public function listAction2(Request $request, $id)
+    public function historyAction(Request $request, $id)
     {
         $limit = (int)$request->query->get('limit', 20);
         $offset = (int)$request->query->get('offset', 0);
