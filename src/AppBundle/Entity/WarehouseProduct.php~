@@ -1,0 +1,139 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: nick
+ * Date: 23/03/16
+ * Time: 7:33
+ */
+// src/AppBundle/Entity/WarehouseProduct.php
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="WarehouseProduct")
+ */
+class WarehouseProduct
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Product",mappedBy="WarehouseProduct")
+     */
+    protected $product;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Warehouse",mappedBy="WarehouseProduct")
+     */
+    protected $warehouse;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->products = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add product
+     *
+     * @param \AppBundle\Entity\Product $product
+     *
+     * @return WarehouseProduct
+     */
+    public function addProduct(\AppBundle\Entity\Product $product)
+    {
+        $this->products[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product
+     *
+     * @param \AppBundle\Entity\Product $product
+     */
+    public function removeProduct(\AppBundle\Entity\Product $product)
+    {
+        $this->products->removeElement($product);
+    }
+
+    /**
+     * Get products
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
+    /**
+     * Add warehouse
+     *
+     * @param \AppBundle\Entity\Warehouse $warehouse
+     *
+     * @return WarehouseProduct
+     */
+    public function addWarehouse(\AppBundle\Entity\Warehouse $warehouse)
+    {
+        $this->warehouses[] = $warehouse;
+
+        return $this;
+    }
+
+    /**
+     * Remove warehouse
+     *
+     * @param \AppBundle\Entity\Warehouse $warehouse
+     */
+    public function removeWarehouse(\AppBundle\Entity\Warehouse $warehouse)
+    {
+        $this->warehouses->removeElement($warehouse);
+    }
+
+    /**
+     * Get warehouses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getWarehouses()
+    {
+        return $this->warehouses;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Get warehouse
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getWarehouse()
+    {
+        return $this->warehouse;
+    }
+}

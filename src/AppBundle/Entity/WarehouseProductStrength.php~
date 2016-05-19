@@ -1,0 +1,22 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: nick
+ * Date: 24/03/16
+ * Time: 2:10
+ */
+// src/AppBundle/Entity/Product.php
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="WarehouseProductStrength")
+ */
+
+class WarehouseProductStrength
+{
+
+
+}

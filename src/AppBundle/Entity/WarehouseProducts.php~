@@ -1,0 +1,39 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: nick
+ * Date: 23/03/16
+ * Time: 6:11
+ */
+// src/AppBundle/Entity/WarehouseProducts.php
+
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="WarehouseProducts")
+ */
+
+class WarehouseProducts
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $warehouse;
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $product;
+    
+    
+}
