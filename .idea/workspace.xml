@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b882e4af-e5c6-4d6d-9d1b-c8351cfad858" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProductList.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProductList.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Forms/ProductEditType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Forms/ProductEditType.php" />
     </list>
     <ignored path="two.iws" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="ProductEditType.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/ProductEditType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+            <state relative-caret-position="360">
+              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
               <folding>
                 <element signature="e#156#205#0#PHP" expanded="true" />
               </folding>
@@ -583,7 +582,7 @@
       <workItem from="1463563102932" duration="12735000" />
       <workItem from="1463641641292" duration="7289000" />
       <workItem from="1463663878697" duration="1591000" />
-      <workItem from="1463666120207" duration="8164000" />
+      <workItem from="1463666120207" duration="8793000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1458736708696</created>
@@ -690,11 +689,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463663314071</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Individual history added&#10;">
+      <created>1463834241295</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1463834241295</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204336000" />
+    <option name="totallyTimeSpent" value="204965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="24" width="1531" height="779" extended-state="6" />
@@ -1084,8 +1090,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/ProductEditType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="360">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
           <folding>
             <element signature="e#156#205#0#PHP" expanded="true" />
           </folding>

@@ -26,8 +26,8 @@ class ProductEditType extends AbstractType
             ->add('id', TextType::class)
             ->add('warehouses', EntityType::class, array(
                 'class'=>'AppBundle\Entity\Product',
-                
-            ))
+
+            ))helellleeuuuwwww;
             ->add('name', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Edit Product'));
 
