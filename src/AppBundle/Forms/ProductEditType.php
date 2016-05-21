@@ -8,6 +8,7 @@
 // src/AppBundle/Forms/ProductEditType.php
 
 namespace AppBundle\Forms;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -20,15 +21,16 @@ class ProductEditType extends AbstractType
 {
     public function buildForm (FormBuilderInterface $builder, array $options)
     {
-        $warehouses = $options['warehouse'];
+        $warehousezzz = $options['warehouse'];
         $builder
             ->add('id', TextType::class)
-            ->add('warehouses', ChoiceType::class, array('choices'=> $warehouses, 'choice_label' => function($value,$key,$index){
-                return $value->getName();
+            ->add('warehouses', EntityType::class, array(
+                'class'=>'AppBundle\Entity\Product',
                 
-            }))
+            ))
             ->add('name', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Edit Product'));
+
     }
 
 

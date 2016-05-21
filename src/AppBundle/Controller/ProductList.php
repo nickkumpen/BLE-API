@@ -108,6 +108,7 @@ class ProductList extends Controller
             throw $this->createNotFoundException();
         }
 
+
         return $this->handleForm($request, $product, ProductEditType::class);
     }
 
