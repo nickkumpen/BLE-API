@@ -8,6 +8,7 @@
 // src/AppBundle/Forms/ProductEditType.php
 
 namespace AppBundle\Forms;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -21,13 +22,17 @@ class ProductEditType extends AbstractType
 {
     public function buildForm (FormBuilderInterface $builder, array $options)
     {
-        $warehousezzz = $options['warehouse'];
         $builder
             ->add('id', TextType::class)
             ->add('warehouses', EntityType::class, array(
-                'class'=>'AppBundle\Entity\Product',
-
-            ))helellleeuuuwwww;
+                'class'=>'AppBundle\Entity\Warehouse',
+                'query_builder'=> function (EntityRepository $er){
+                    return $er->createQueryBuilder('u')
+                        ->orderBy('u.name','ASC');
+                },
+                'choice_label'=>'name',
+                
+            ))
             ->add('name', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Edit Product'));
 
@@ -38,7 +43,6 @@ class ProductEditType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'AppBundle\Entity\Product',
-            'warehouse' => null,
         ));
     }
 

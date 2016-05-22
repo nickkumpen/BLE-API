@@ -103,6 +103,7 @@ class ProductList extends Controller
         $product = $this->getDoctrine()->getRepository('AppBundle:Product')
         ->find($id);
 
+
         if ($product===null)
         {
             throw $this->createNotFoundException();
@@ -114,11 +115,9 @@ class ProductList extends Controller
 
     private function handleForm(Request $request, Product $product, $formClass)
     {
-        $warehouse = $this->getDoctrine()
-            ->getRepository('AppBundle:Warehouse')
-            ->findAll();
 
-        $form = $this->createForm($formClass, $product, array('warehouse'=>$warehouse));
+
+        $form = $this->createForm($formClass, $product);
 
         $form->handleRequest($request);
 
@@ -131,7 +130,8 @@ class ProductList extends Controller
         }
 
         return $this->render('default/new.html.twig', array('form' => $form->createView(),
-        ));
+        )
+        );
 
     }  
 
