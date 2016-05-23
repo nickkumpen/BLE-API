@@ -115,23 +115,25 @@ class ProductList extends Controller
 
     private function handleForm(Request $request, Product $product, $formClass)
     {
-
-
         $form = $this->createForm($formClass, $product);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
         {
+            if ($product->getId() && $form->get('warehouse')) {
+                $product->getWarehouses()->clear();
+                $product->getWarehouses()->add($form->get('warehouse')->getData());
+            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($product);
             $em->flush();
             return $this->redirectToRoute('product_list');
         }
 
-        return $this->render('default/new.html.twig', array('form' => $form->createView(),
-        )
-        );
+        return $this->render('default/new.html.twig', array(
+                'form' => $form->createView(),
+        ));
 
     }  
 

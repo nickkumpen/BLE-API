@@ -49,7 +49,8 @@
                     <td><a href="{{ path('product_edit',{'id':product.id}) }}">{{ product.id }}</a></td>
                     <td><a href="{{ path('product_history',{'id':product.id}) }}">
                         {% for warehouse in product.warehouses %}
-                            {{ warehouse.name}} ({{ historyRepo.findLastRecordOfProductInWarehouse(warehouse, product).time|date('d/m/Y H:i:s') }}) {# check op last en br toevoegen en zo #}
+                            {% set lastRecord = historyRepo.findLastRecordOfProductInWarehouse(warehouse, product) %}
+                            {{ warehouse.name}} {% if lastRecord %}({{ lastRecord.time|date('d/m/Y H:i:s') }}){% endif %} {# check op last en br toevoegen en zo #}
                         {% endfor %}
                         </a>
                     </td>

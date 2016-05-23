@@ -24,13 +24,14 @@ class ProductEditType extends AbstractType
     {
         $builder
             ->add('id', TextType::class)
-            ->add('warehouses', EntityType::class, array(
+            ->add('warehouse', EntityType::class, array(
                 'class'=>'AppBundle\Entity\Warehouse',
                 'query_builder'=> function (EntityRepository $er){
                     return $er->createQueryBuilder('u')
                         ->orderBy('u.name','ASC');
                 },
                 'choice_label'=>'name',
+                'mapped' => false,
                 
             ))
             ->add('name', TextType::class)

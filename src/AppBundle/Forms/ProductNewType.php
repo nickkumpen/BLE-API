@@ -20,7 +20,6 @@ class ProductNewType extends AbstractType
         $builder
             ->add('id', TextType::class)
             ->add('name', TextType::class)
-            ->add('warehouse', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Create Product'));
     }
 }
