@@ -9,9 +9,11 @@
 
 namespace AppBundle\Forms;
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -24,16 +26,26 @@ class ProductEditType extends AbstractType
     {
         $builder
             ->add('id', TextType::class)
-            ->add('warehouse', EntityType::class, array(
-                'class'=>'AppBundle\Entity\Warehouse',
-                'query_builder'=> function (EntityRepository $er){
-                    return $er->createQueryBuilder('u')
-                        ->orderBy('u.name','ASC');
-                },
-                'choice_label'=>'name',
-                'mapped' => false,
-                
+            ->add('warehouses', CollectionType::class, array(
+                'entry_type'=> EntityType::class, array(
+                    'class'=> 'AppBundle\Entity\Warehouse',
+                    'query_builder'=>function(EntityRepository $er){
+                        return $er->createQueryBuilder('u')
+                            ->orderBy('u.name', 'ASC');
+                    }
+                )
             ))
+
+            //->add('warehouse', EntityType::class, array(
+            //    'class'=>'AppBundle\Entity\Warehouse',
+            //    'query_builder'=> function (EntityRepository $er){
+            //        return $er->createQueryBuilder('u')
+            //            ->orderBy('u.name','ASC');
+            //    },
+            //    'choice_label'=>'name',
+            //    'mapped' => false,
+            //
+            //))
             ->add('name', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Edit Product'));
 

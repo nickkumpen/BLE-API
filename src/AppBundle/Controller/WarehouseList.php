@@ -26,10 +26,11 @@ class WarehouseList extends Controller
         $warehouse = $this->getDoctrine()
             ->getRepository('AppBundle:Warehouse')
             ->findAll();
-        
-        return $this->render("List/Warehouse.html.twig", array("warehouse"=>$warehouse));
+        $count = $warehouse
+            ->select('COUNT(Warehouse.products)');
+        return $this->render("List/Warehouse.html.twig", array("warehouse"=>$warehouse, "count" =>$count));
     }
-    
+
     /**
      * @Route("/warehouseform", name="warehouse_add")
      */
