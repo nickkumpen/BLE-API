@@ -23,13 +23,39 @@ class WarehouseList extends Controller
      */
     public function listAction()
     {
-        $warehouse = $this->getDoctrine()
-            ->getRepository('AppBundle:Warehouse')
-            ->findAll();
-        $count = $warehouse
-            ->select('COUNT(Warehouse.products)');
-        return $this->render("List/Warehouse.html.twig", array("warehouse"=>$warehouse, "count" =>$count));
+        $repo = $this->getDoctrine()
+            ->getRepository('AppBundle:Warehouse');
+
+        $warehouses = $repo->findAll();
+
+
+        return $this->render("List/Warehouse.html.twig", array("warehouses" => $warehouses));
     }
+
+   // /**
+   //  * @Route("/warehouselist/{id}", name="warehouse_linked")
+   //  */
+   // public function linkedAction(Request $request, $id)
+   // {
+   //     $qb = $this->getDoctrine()
+   //         ->getEntityManager()
+   //         ->getRepository('AppBundle:Warehouse')
+   //         ->createQueryBuilder('w')
+   //         ->select('w, p')
+   //         ->leftJoin('w.products', 'p')
+   //         ->where('w.id = (:warehouse)')
+   //         ->setParameter('warehouse', $id );
+   //     
+   //     $linked = $qb
+   //         ->getQuery()
+   //         ->getResult();
+   //     
+   //     return $this->render("List/linked_to_warehouse.html.twig", array(
+   //         "linked"=>$linked  
+   //     ));
+   // }
+
+
 
     /**
      * @Route("/warehouseform", name="warehouse_add")

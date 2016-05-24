@@ -38,22 +38,15 @@
 
     <table id="t01">
         <tr>
-            <th>Date</th>
+            <th>Datum</th>
             <th>Warehouse</th>
         </tr>
-        {% for record in history %}
+        {% for Warehouse in linked %}
             <tr>
-                <td>{{ record.time|date('d/m/Y H:i:s') }}</td>
-                <td>{{ record.warehouse.name }}</td>
+                <td>{{ Warehouse.products }}</td>
             </tr>
         {% endfor %}
     </table>
-
-    <p class="paginiation">
-        {% for page in 1..totalPages %}
-            <a href="{{ path('product_history', {"id": productId, "offset": limit * (page - 1), "limit": limit}) }}" class="nav-item{% if currentPage == page %} current{% endif %}">{{ page }}</a>
-        {% endfor %}
-    </p>
 {% endblock %}
 {% block javascripts %}{% endblock %}
 </body>
