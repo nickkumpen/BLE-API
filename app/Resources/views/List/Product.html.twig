@@ -1,5 +1,12 @@
 {% extends '::base.html.twig' %}
 
+{% block title %}
+<title>Products</title>
+{% endblock %}
+
+
+
+
 {% block body %}
     <code>
        <table>
@@ -26,6 +33,6 @@
         <a href="{{ path('product_add') }}">add new product</a>
     </code>
 {% endblock %}
-{% block javascripts %}{% endblock %}
+
 
 
