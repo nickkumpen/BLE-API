@@ -1,61 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Warehouses!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <style>
-        table {
-            width:30%;
-        }
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: left;
-        }
-        table#t01 tr:nth-child(even) {
-            background-color: #eee;
-        }
-        table#t01 tr:nth-child(odd) {
-            background-color:#fff;
-        }
-        table#t01 th	{
-            background-color: black;
-            color: white;
-        }
-    </style>
+{% extends '::base.html.twig' %}
 
-</head>
-<body>
+{% block title %}
+    <title>Warehouses</title>
+{% endblock %}
+
 {% block body %}
-    <code>
-        <a href="{{ path('login') }}">Login</a><br/>
-        <a href="{{ path('product_list') }}">Products</a><br/>
-        <a href="{{ path('warehouse_list') }}">Warehouses</a><br/>
-        <a href="{{ path('user_registration') }}">Register</a><br/>
-
-            <table id="t01">
+    <h1>Warehouses</h1>
+    {% block table %}
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
                 <tr>
                     <th>Car</th>
                     <th>NumberPlate</th>
                     <th>Amount of products</th>
+                    <th>Actions</th>
                 </tr>
+            </thead>
+            <tbody>
                 {% for warehouse in warehouses %}
                     <tr>
                         <td>{{ warehouse.name}} </td>
                         <td><a href="{{ path('warehouse_edit',{'id':warehouse.id}) }}">{{ warehouse.id }}</a></td>
                         <td>{{ warehouse.products.count }}</td>
+                        <td><a href="{{ path('warehouse_edit',{'id':warehouse.id}) }}"><span class="glyphicon glyphicon-wrench" aria-hidden=true></span></a>
+                        </td>
                     </tr>
                 {% endfor %}
-            </table>
-            <br/>
-            <a href="{{ path('warehouse_add') }}">add new warehouse</a>
-    </code>
+            </tbody>
+        </table>
+    </div>
+</div>
+    {% endblock %}
+    <br/>
+
+    <a href="{{ path('warehouse_add') }}" class="btn btn-lg btn-info">add new warehouse</a>
 {% endblock %}
-{% block javascripts %}{% endblock %}
-</body>
-</html>

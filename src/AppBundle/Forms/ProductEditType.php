@@ -26,26 +26,26 @@ class ProductEditType extends AbstractType
     {
         $builder
             ->add('id', TextType::class)
-            ->add('warehouses', CollectionType::class, array(
-                'entry_type'=> EntityType::class, array(
-                    'class'=> 'AppBundle\Entity\Warehouse',
-                    'query_builder'=>function(EntityRepository $er){
-                        return $er->createQueryBuilder('u')
-                            ->orderBy('u.name', 'ASC');
-                    }
-                )
-            ))
-
-            //->add('warehouse', EntityType::class, array(
-            //    'class'=>'AppBundle\Entity\Warehouse',
-            //    'query_builder'=> function (EntityRepository $er){
-            //        return $er->createQueryBuilder('u')
-            //            ->orderBy('u.name','ASC');
-            //    },
-            //    'choice_label'=>'name',
-            //    'mapped' => false,
-            //
+            //->add('warehouses', CollectionType::class, array(
+            //    'entry_type'=> EntityType::class, array(
+            //        'class'=> 'AppBundle\Entity\Warehouse',
+            //        'query_builder'=>function(EntityRepository $er){
+            //            return $er->createQueryBuilder('u')
+            //                ->orderBy('u.name', 'ASC');
+            //        }
+            //    )
             //))
+
+            ->add('warehouse', EntityType::class, array(
+                'class'=>'AppBundle\Entity\Warehouse',
+                'query_builder'=> function (EntityRepository $er){
+                    return $er->createQueryBuilder('u')
+                        ->orderBy('u.name','ASC');
+                },
+                'choice_label'=>'name',
+                'mapped' => false,
+            
+            ))
             ->add('name', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Edit Product'));
 

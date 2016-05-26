@@ -9,6 +9,7 @@ security:
         our_db_provider:
             entity:
                 class: AppBundle:User
+                property: username
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -22,12 +23,19 @@ security:
 
         main:
             pattern:    ^/
-            http_basic: ~
             provider: our_db_provider
+            form_login:
+                login_path: /login
+                check_path: /login_check
+                username_parameter: username
+                password_parameter: password
+                csrf_token_generator: security.csrf.token_manager
+
 
         default:
             anonymous: ~
-            http_basic: ~
+
+
 
             # anonymous: ~
             # activate different ways to authenticate
@@ -35,7 +43,4 @@ security:
             # http_basic: ~
             # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
 
-            #form_login:
-             # login_path: login
-              #check_path: login
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html

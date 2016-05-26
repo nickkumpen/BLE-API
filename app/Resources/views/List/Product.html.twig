@@ -8,30 +8,44 @@
 
 
 {% block body %}
-    <code>
-       <table>
-            <tr>
-                <th>Name</th>
-                <th>UUID</th>
-                <th>Warehouse (Last seen at)</th>
-            </tr>
-            {% for product in products %}
+    <h1>Products</h1>
+    {% block table %}
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+           <thead>
                 <tr>
-                    <td>{{ product.name}}</td>
-                    <td><a href="{{ path('product_edit',{'id':product.id}) }}">{{ product.id }}</a></td>
-                    <td><a href="{{ path('product_history',{'id':product.id}) }}">
-                        {% for warehouse in product.warehouses %}
-                            {% set lastRecord = historyRepo.findLastRecordOfProductInWarehouse(warehouse, product) %}
-                            {{ warehouse.name}} {% if lastRecord %}({{ lastRecord.time|date('d/m/Y H:i:s') }}){% endif %} {# check op last en br toevoegen en zo #}
-                        {% endfor %}
-                        </a>
-                    </td>
+                     <th>Name</th>
+                     <th>UUID</th>
+                     <th>Warehouse (Last seen at)</th>
+                     <th>Actions</th>
                 </tr>
-            {% endfor %}
+           </thead>
+           <tbody>
+                {% for product in products %}
+                     <tr>
+                         <td>{{ product.name}}</td>
+                         <td><a href="{{ path('product_edit',{'id':product.id}) }}">{{ product.id }}</a></td>
+                         <td><a href="{{ path('product_history',{'id':product.id}) }}">
+                             {% for warehouse in product.warehouses %}
+                                 {% set lastRecord = historyRepo.findLastRecordOfProductInWarehouse(warehouse, product) %}
+                                 {{ warehouse.name}} {% if lastRecord %}({{ lastRecord.time|date('d/m/Y H:i:s') }}){% endif %} {# check op last en br toevoegen en zo #}
+                             {% endfor %}
+                             </a>
+                         </td>
+                         <td><a href="{{ path('product_edit',{'id':product.id}) }}"><span class="glyphicon glyphicon-wrench" aria-hidden=true></span></a>
+                             <a href="{{ path('product_history',{'id':product.id}) }}"><span class="glyphicon glyphicon-time" aria-hidden=true></span></a>
+                         </td>
+                     </tr>
+                {% endfor %}
+           </tbody>
         </table>
+    </div>
+</div>
+        {% endblock %}
         <br/>
-        <a href="{{ path('product_add') }}">add new product</a>
-    </code>
+   <a href="{{ path('product_add') }}" class="btn btn-lg btn-info">add new product</a>
+
 {% endblock %}
 
 
