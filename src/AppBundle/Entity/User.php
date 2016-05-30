@@ -58,6 +58,12 @@ class User implements AdvancedUserInterface, \Serializable
      */
     private $isActive;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $Role;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -242,4 +248,28 @@ class User implements AdvancedUserInterface, \Serializable
         return $this;
     }
     
+
+    /**
+     * Set role
+     *
+     * @param string $role
+     *
+     * @return User
+     */
+    public function setRole($role)
+    {
+        $this->Role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->Role;
+    }
 }

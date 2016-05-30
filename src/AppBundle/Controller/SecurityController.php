@@ -10,12 +10,13 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\User;
 use AppBundle\Forms\LoginType;
-use AppBundle\Forms\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+
+
+
 class SecurityController extends Controller
 {
     /**
@@ -30,27 +31,24 @@ class SecurityController extends Controller
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-        $form = $this->createForm(LoginType::class);
+        //$form = $this->createForm(LoginType::class);
 
         return $this->render(
-            'security/login2.html.twig',
+            'security/login.html.twig',
             array(
                 // last username entered by the user
                 'last_username' => $lastUsername,
                 'error'         => $error,
-                'form'         => $form->createView (),
+                //'form'         => $form->createView (),
 
             )
         );
-        
     }
-
-    /**
-     * @Route("/login_check", name="login_check")
-     */
-    public function loginCheckAction()
-    {
-        //not used as the route is handled by the security system
-    }
-
+   // /**
+   //  * @Route("/login_check", name="login_check")
+   //  */
+   // public function loginCheckAction()
+   // {
+   //     //return $this->redirect($this->generateUrl('product_list'));
+   // }
 }

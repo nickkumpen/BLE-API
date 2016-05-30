@@ -17,25 +17,19 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        anonymous:
-            pattern: ^/(register|login)
-            security: false
-
         main:
-            pattern:    ^/
+            anonymous: ~
             provider: our_db_provider
             form_login:
                 login_path: /login
-                check_path: /login_check
-                username_parameter: username
-                password_parameter: password
-                csrf_token_generator: security.csrf.token_manager
+                check_path: /login
 
+            logout:
+                path: /logout
+                target: /login
 
-        default:
-            anonymous: ~
-
-
+    #access_control:
+    #    - { path: ^/productlist}
 
             # anonymous: ~
             # activate different ways to authenticate

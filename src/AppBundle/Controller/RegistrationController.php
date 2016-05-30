@@ -24,15 +24,17 @@ class RegistrationController extends Controller
     {
 
         $user = new User();
+        $user->setRole('ROLE_USER');
         $form = $this->createForm(UserType::class, $user);
         
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid())
         {
+            dump($form);
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
-            
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();

@@ -55,6 +55,7 @@ class LoginType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
+            'data_class' =>'AppBundle\Entity\User',
             'csrf_protection' => true,
             'csrf_field_name' => '_csrf_token',
             'intention' => 'authenticate',
