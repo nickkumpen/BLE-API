@@ -22,7 +22,14 @@ security:
             provider: our_db_provider
             form_login:
                 login_path: /login
-                check_path: /login
+                check_path: /login_check
+                username_parameter: login[username]
+                password_parameter: login[password]
+                csrf_token_generator: security.csrf.token_manager
+                csrf_parameter: login[_csrf_security_token]
+
+
+
 
             logout:
                 path: /logout

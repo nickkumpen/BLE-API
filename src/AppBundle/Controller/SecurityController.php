@@ -31,24 +31,24 @@ class SecurityController extends Controller
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-        //$form = $this->createForm(LoginType::class);
+        $form = $this->createForm(LoginType::class);
 
         return $this->render(
-            'security/login.html.twig',
+            'security/login2.html.twig',
             array(
                 // last username entered by the user
                 'last_username' => $lastUsername,
                 'error'         => $error,
-                //'form'         => $form->createView (),
+                'form'         => $form->createView (),
 
             )
         );
     }
-   // /**
-   //  * @Route("/login_check", name="login_check")
-   //  */
-   // public function loginCheckAction()
-   // {
-   //     //return $this->redirect($this->generateUrl('product_list'));
-   // }
+    /**
+     * @Route("/login_check", name="login_check")
+     */
+    public function loginCheckAction()
+    {
+        //return $this->redirect($this->generateUrl('product_list'));
+    }
 }

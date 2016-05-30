@@ -16,6 +16,8 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\HttpFoundation\Session\Session;
+
 
 
 class LoginType extends AbstractType
@@ -57,7 +59,7 @@ class LoginType extends AbstractType
         $resolver->setDefaults(array(
             'data_class' =>'AppBundle\Entity\User',
             'csrf_protection' => true,
-            'csrf_field_name' => '_csrf_token',
+            'csrf_field_name' => '_csrf_security_token',    
             'intention' => 'authenticate',
         ));
 
