@@ -14,10 +14,9 @@
 
 
     {{ form_start(form) }}
-        {{ form_row(form.username) }}
-        {{ form_row(form.password) }}
+    {{ form_widget(form) }}
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-
-{{ form_end(form) }}
+    {{ form_end(form) }}
 
 {% endblock %}

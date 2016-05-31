@@ -20,6 +20,7 @@ class InventoryRestController extends FOSRestController
 {
     /**
      * @Route("/inventory", name="inventory")
+     * 
      */
     public function yourAction(Request $request)
     {

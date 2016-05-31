@@ -20,6 +20,7 @@ class WarehouseList extends Controller
 {
     /**
      * @Route("/warehouselist", name="warehouse_list")
+     * @Security("has_role('ROLE_USER')")
      */
     public function listAction()
     {
@@ -59,6 +60,7 @@ class WarehouseList extends Controller
 
     /**
      * @Route("/warehouseform", name="warehouse_add")
+     * @Security("has_role('ROLE_MODERATOR')")
      */
     public function newAction(Request $request)
     {
@@ -67,6 +69,7 @@ class WarehouseList extends Controller
     
     /**
      * @Route("/warehouseform/{id}", name="warehouse_edit")
+     * @Security("has_role('ROLE_MODERATOR')")
      */
     public function detailAction(Request $request, $id)
     {

@@ -87,10 +87,28 @@ class User implements AdvancedUserInterface, \Serializable
     {
         return $this->password;
     }
-
+    
     public function getRoles()
     {
-        return array('ROLE_USER');
+
+        $role = array();
+        switch($this->getRole())
+        {
+            case 'ROLE_SUPERADMIN':
+                $role[] = 'ROLE_SUPERADMIN';
+            
+            case 'ROLE_ADMIN':
+                $role[] = 'ROLE_ADMIN';
+            
+            case 'ROLE_MODERATOR':
+                $role[] = 'ROLE_MODERATOR';
+                
+            default:
+                $role[] = 'ROLE_USER';
+                
+        }
+        
+        return $role;
     }
 
     public function eraseCredentials()
@@ -272,4 +290,6 @@ class User implements AdvancedUserInterface, \Serializable
     {
         return $this->Role;
     }
+
+    
 }

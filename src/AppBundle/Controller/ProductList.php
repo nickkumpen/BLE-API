@@ -18,12 +18,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 class ProductList extends Controller
 {
     /**
      * @Route("/productlist", name="product_list")
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function listAction()
     {
@@ -49,6 +52,7 @@ class ProductList extends Controller
     /**
      * @Route("/productlist/{id}", name="product_history")
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function historyAction(Request $request, $id)
     {
@@ -89,14 +93,17 @@ class ProductList extends Controller
 
     /**
      * @Route("/productform", name="product_add")
+     * @Security("has_role('ROLE_MODERATOR')")
      */
     public function newAction(Request $request)
     {
         return $this->handleForm($request, new Product(), ProductNewType::class);
     }
-    
+
     /**
      * @Route("/productform/{id}", name="product_edit")
+     * @Security("has_role('ROLE_MODERATOR')")
+     *
      */
     public function detailAction(Request $request, $id)
     {
