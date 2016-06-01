@@ -32,8 +32,8 @@ class UserEditType extends AbstractType
             ))
             ->add('is_active', ChoiceType::class, array(
                 'choices'=>array(
-                    'yes'=> 1,
-                    'no'=> 0,
+                    'Yes'=> 1,
+                    'No'=> 0,
                 ),
             ))
             ->add('save', SubmitType::class, array('label' => 'Save User'));
