@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    <title>Users</title>
+{% endblock %}
+
+{% block body %}
+<h1>Products</h1>
+{% block table %}
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>E-mail</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.role }}</td>
+                        <td><a href="{{ path('user_edit',{'id':user.id}) }}"><span class="glyphicon glyphicon-wrench" aria-hidden=true></span></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+{% endblock %}

@@ -15,6 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Forms\WarehouseNewType;
 use AppBundle\Forms\WarehouseEditType;
 use AppBundle\Entity\Warehouse;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 class WarehouseList extends Controller
 {
