@@ -41,6 +41,7 @@ class Job
      * @ORM\Column(type="datetime")
      */
     protected $end;
+    
     /**
      * @ORM\Column(type="datetime")
      */

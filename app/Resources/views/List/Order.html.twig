@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    <title>Orders</title>
+{% endblock %}
+
+
+
+
+{% block body %}
+    <h1>Orders</h1>
+    {% block table %}
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Order Name</th>
+                        <th>Order Description</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Date Created</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in orders %}
+                        <tr>
+                            <td>{{ order.name }}</td>
+                            <td>{{ order.description }}</td>
+                            <td>{{ order.start|date('d/m/Y') }}</td>
+                            <td>{{ order.end|date('d/m/Y') }}</td>
+                            <td>{{ order.created|date('d/m/Y H:i:s') }}</td>
+                            <td><a href="{{ path('order_edit',{'id':order.id}) }}"><span class="glyphicon glyphicon-wrench" aria-hidden=true></span></a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('order_drop',{'id':order.id}) }}"><span class="glyphicon glyphicon-remove" aria-hidden=true></span></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endblock %}
+    <a href="{{ path('order_add') }}" class="btn btn-lg btn-info">add new job</a>
+
+{% endblock %}

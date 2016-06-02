@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b882e4af-e5c6-4d6d-9d1b-c8351cfad858" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Order.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/List/Order.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/forms/Orders.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Forms/OrderEditType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Forms/OrderNewType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/List/Job.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/List/Job.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/JobController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/JobController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Job.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Job.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Order.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Order.php" />
     </list>
     <ignored path="two.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,57 +37,29 @@
     <favorites_list name="two" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.20418471">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ProductList.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductList.php">
+        <leaf>
+          <file leaf-file-name="Orders.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/Orders.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-945">
-                  <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Order.html.twig" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Resources/views/List/Order.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="645">
+                  <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
                   <folding>
-                    <element signature="e#161#190#0#PHP" expanded="true" />
+                    <element signature="e#1113#1123#0#Twig" expanded="true" />
+                    <element signature="e#1290#1300#0#Twig" expanded="true" />
+                    <element signature="e#1619#1628#0#Twig" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RegistrationController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ProductEditType.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/ProductEditType.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InventoryRestController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/InventoryRestController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Job.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Job.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="615">
-                  <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -94,46 +68,63 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="JobController.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JobController.php">
+          <file leaf-file-name="Job.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Resources/views/List/Job.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="900">
-                  <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+                <state relative-caret-position="690">
+                  <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1365">
+                  <caret line="96" column="51" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
                   <folding>
-                    <element signature="e#118#143#0#PHP" expanded="true" />
-                    <element signature="e#913#933#0#PHP" expanded="true" />
-                    <element signature="e#1572#1587#1#PHP" expanded="true" />
+                    <element signature="e#117#144#0#PHP" expanded="true" />
+                    <element signature="e#858#875#1#PHP" expanded="true" />
+                    <element signature="e#931#953#0#PHP" expanded="true" />
+                    <element signature="e#1612#1629#1#PHP" expanded="true" />
+                    <element signature="e#2101#2118#1#PHP" expanded="true" />
+                    <element signature="e#2759#2782#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Order.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Order.php">
+          <file leaf-file-name="JobNewType.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/JobNewType.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="375">
+                  <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#114#154#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php">
+          <file leaf-file-name="Jobs.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/Jobs.html.twig">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Product.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/Resources/views/List/Product.html.twig">
+          <file leaf-file-name="JobEditType.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/JobEditType.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="31" column="106" selection-start-line="31" selection-start-column="96" selection-end-line="31" selection-end-column="111" />
-                  <folding />
+                <state relative-caret-position="405">
+                  <caret line="32" column="5" selection-start-line="19" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#112#152#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -156,11 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/WarehouseProductHistory.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/WarehouseProductHistoryRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Forms/ProductNewType.php" />
         <option value="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Form/Extension/Core/DataMapper/PropertyPathMapper.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/Task/new.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" />
@@ -202,11 +188,16 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Forms/JobNewType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Forms/JobEditType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Order.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Job.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/JobController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/List/Job.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Job.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Order.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/JobController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Forms/OrderNewType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Forms/OrderEditType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/forms/Orders.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/List/Order.html.twig" />
       </list>
     </option>
   </component>
@@ -730,7 +721,7 @@
       <workItem from="1464766558799" duration="316000" />
       <workItem from="1464766900077" duration="12497000" />
       <workItem from="1464789174691" duration="10827000" />
-      <workItem from="1464862084418" duration="8186000" />
+      <workItem from="1464862084418" duration="10586000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1458736708696</created>
@@ -935,11 +926,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464867460247</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary=" + drop job added&#10;&#10; ----continue with order controller">
+      <created>1464875187863</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1464875187863</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="359865000" />
+    <option name="totallyTimeSpent" value="362265000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1024,7 +1022,8 @@
     <MESSAGE value="ROLE SYSTEM ADDED" />
     <MESSAGE value="userlist and userediting added" />
     <MESSAGE value="Job entity, joblist, job_add, job_edit added&#10;&#10;extra views directory for forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="Job entity, joblist, job_add, job_edit added&#10;&#10;extra views directory for forms" />
+    <MESSAGE value=" + drop job added&#10;&#10; ----continue with order controller" />
+    <option name="LAST_COMMIT_MESSAGE" value=" + drop job added&#10;&#10; ----continue with order controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1033,34 +1032,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config_test.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AnonymousController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1246,14 +1217,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/List/Jobs.html.twig" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/Jobs.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/WarehouseList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="877">
@@ -1272,42 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/JobEditType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#112#152#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/JobNewType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="48" selection-start-line="11" selection-start-column="0" selection-end-line="15" selection-end-column="48" />
-          <folding>
-            <element signature="e#114#154#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -1318,34 +1245,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Job.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/date_c.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="316" column="20" selection-start-line="316" selection-start-column="20" selection-end-line="316" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/InventoryRestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1366,9 +1269,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/ProductEditType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-945">
+        <state relative-caret-position="-936">
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="e#161#190#0#PHP" expanded="true" />
@@ -1376,10 +1287,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/InventoryRestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/JobEditType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="5" selection-start-line="19" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="e#112#152#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/JobNewType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="e#114#154#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/Jobs.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JobController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="744">
+          <caret line="99" column="5" selection-start-line="84" selection-start-column="4" selection-end-line="99" selection-end-column="5" />
           <folding>
             <element signature="e#118#143#0#PHP" expanded="true" />
             <element signature="e#913#933#0#PHP" expanded="true" />
@@ -1388,19 +1343,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/List/Job.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Job.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        <state relative-caret-position="330">
+          <caret line="27" column="20" selection-start-line="24" selection-start-column="0" selection-end-line="27" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/ProductEditType.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/OrderNewType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="300">
+          <caret line="25" column="73" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
+          <folding>
+            <element signature="e#113#153#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Forms/OrderEditType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
+          <folding>
+            <element signature="e#112#152#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/Orders.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/List/Order.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding>
+            <element signature="e#1113#1123#0#Twig" expanded="true" />
+            <element signature="e#1290#1300#0#Twig" expanded="true" />
+            <element signature="e#1619#1628#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/List/Job.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="96" column="51" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
+          <folding>
+            <element signature="e#117#144#0#PHP" expanded="true" />
+            <element signature="e#858#875#1#PHP" expanded="true" />
+            <element signature="e#931#953#0#PHP" expanded="true" />
+            <element signature="e#1612#1629#1#PHP" expanded="true" />
+            <element signature="e#2101#2118#1#PHP" expanded="true" />
+            <element signature="e#2759#2782#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
