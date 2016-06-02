@@ -138,7 +138,7 @@ class ProductList extends Controller
             return $this->redirectToRoute('product_list');
         }
 
-        return $this->render('default/new.html.twig', array(
+        return $this->render('forms/Products.html.twig', array(
                 'form' => $form->createView(),
         ));
 

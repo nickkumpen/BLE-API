@@ -28,7 +28,7 @@ class UserController extends Controller
         $users = $this->getDoctrine()
             ->getRepository('AppBundle:User')
             ->findAll();
-        return $this->render(":List:Users.html.twig", array(
+        return $this->render("List/Users.html.twig", array(
             "users" => $users
         ));
     }
@@ -63,7 +63,7 @@ class UserController extends Controller
             
             return $this->redirectToRoute('user_list');
         }
-        return $this->render('List/UsersEdit.html.twig', array(
+        return $this->render('forms/UsersEdit.html.twig', array(
             'form'=>$form->createView(),
         ));
     }

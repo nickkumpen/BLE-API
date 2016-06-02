@@ -100,7 +100,7 @@ class WarehouseList extends Controller
             return $this->redirectToRoute('warehouse_list');
             
         }
-        return $this->render('default/new.html.twig', array('form'=> $form->createView(),));
+        return $this->render('forms/Warehouses.html.twig', array('form'=> $form->createView(),));
     }
     
 }

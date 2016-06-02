@@ -42,7 +42,7 @@ class RegistrationController extends Controller
             return $this->redirectToRoute('product_list');
         }
         
-        return $this->render('registration/register.html.twig',array('form' => $form->createView()));
+        return $this->render('forms/register.html.twig',array('form' => $form->createView()));
         
     }
 
