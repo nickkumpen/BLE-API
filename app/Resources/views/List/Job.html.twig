@@ -19,6 +19,7 @@
                     <th>Job Address</th>
                     <th>Start Date</th>
                     <th>End Date</th>
+                    <th>Date Created</th>
                     <th>Actions</th>
                 </tr>
            </thead>
@@ -29,7 +30,9 @@
                         <td>{{ job.address }}</td>
                         <td>{{ job.start|date('d/m/Y') }}</td>
                         <td>{{ job.end|date('d/m/Y') }}</td>
+                        <td>{{ job.created|date('d/m/Y H:i:s') }}</td>
                         <td><a href="{{ path('job_edit',{'id':job.id}) }}"><span class="glyphicon glyphicon-wrench" aria-hidden=true></span></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('job_drop',{'id':job.id}) }}"><span class="glyphicon glyphicon-remove" aria-hidden=true></span></a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -38,6 +41,6 @@
     </div>
 </div>
 {% endblock %}
-<a href="{{ path('job_add') }}" class="btn btn-lg btn-info">add new product</a>
+<a href="{{ path('job_add') }}" class="btn btn-lg btn-info">add new job</a>
 
 {% endblock %}

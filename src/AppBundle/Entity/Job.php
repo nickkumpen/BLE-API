@@ -41,6 +41,12 @@ class Job
      * @ORM\Column(type="datetime")
      */
     protected $end;
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
+    
+    
     
     
 
@@ -244,5 +250,29 @@ class Job
     public function getEnd()
     {
         return $this->end;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     *
+     * @return Job
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
     }
 }

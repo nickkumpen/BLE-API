@@ -16,7 +16,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use AppBundle\Forms\JobNewType;
 use AppBundle\Forms\JobEditType;
-class JobController extends Controller  
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
+
+class JobController extends Controller
 {
     /**
      * @Route("/joblist", name="job_list")
@@ -38,7 +41,29 @@ class JobController extends Controller
      */
     public function JobAddAction(Request $request)
     {
-        return $this->handleForm($request, new Job(), JobNewType::class);
+        $job = new Job();
+        $job->setCreated(new \DateTime("now"));
+        return $this->handleForm($request, $job, JobNewType::class);
+    }
+
+    /**
+     * @Route("/job_drop/{id}", name= "job_drop")
+     * @Security("has_role('ROLE_MODERATOR')")
+     */
+    public function JobDropAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        $job = $em->getRepository('AppBundle:Job')
+            ->find($id);
+        if($job === null)
+        {
+            throw $this->createNotFoundException();
+        }
+        $em->remove($job);
+        $em->flush();
+        return $this->redirectToRoute('job_list');
+
     }
     
     /**
