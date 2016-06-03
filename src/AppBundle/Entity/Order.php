@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Order")
+ * @ORM\Table(name="WorkOrder")
  */
 class Order
 {

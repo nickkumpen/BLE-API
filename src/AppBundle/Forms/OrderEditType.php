@@ -24,7 +24,7 @@ class OrderEditType extends AbstractType
             ->add('description', TextType::class)
             ->add('start', DateType::class)
             ->add('end', DateType::class)
-            ->add('save', SubmitType::class, array('label'=>'Submit Job'));
+            ->add('save', SubmitType::class, array('label'=>'Submit Order'));
     }
 
     public function configureOptions(optionsResolver $resolver)

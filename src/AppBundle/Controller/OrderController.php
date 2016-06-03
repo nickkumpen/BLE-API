@@ -7,6 +7,7 @@
  */
 
 namespace AppBundle\Controller;
+
 use AppBundle\Entity\Order;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -17,7 +18,6 @@ use AppBundle\Forms\OrderNewType;
 use AppBundle\Forms\OrderEditType;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\DateTime;
-
 
 class OrderController extends Controller
 {
@@ -30,7 +30,7 @@ class OrderController extends Controller
         $orders = $this->getDoctrine()
             ->getRepository('AppBundle:Order')
             ->findAll();
-        return $this->render("List/Order.html.twig", array(
+        return $this->render("List/Order.html.twig",array(
             "orders"=>$orders
         ));
     }
@@ -94,7 +94,7 @@ class OrderController extends Controller
             $em->flush();
             return $this->redirectToRoute('order_list');
         }
-        return $this->render('forms/Order.html.twig', array(
+        return $this->render('forms/Orders.html.twig', array(
             'form' => $form->createView(),
         ));
     }

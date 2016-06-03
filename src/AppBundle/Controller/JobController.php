@@ -98,6 +98,5 @@ class JobController extends Controller
             'form' => $form->createView(),
         ));
     }
-
-
+    
 }
