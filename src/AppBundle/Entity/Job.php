@@ -46,6 +46,11 @@ class Job
      * @ORM\Column(type="datetime")
      */
     protected $created;
+
+    /**
+     * @ORM\OneToMany(targetEntity="WorkOrder", mappedBy="job")
+     */
+    protected $workorders;
     
     
     
@@ -275,5 +280,46 @@ class Job
     public function getCreated()
     {
         return $this->created;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->workorders = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add workorder
+     *
+     * @param \AppBundle\Entity\Order $workorder
+     *
+     * @return Job
+     */
+    public function addWorkorder(\AppBundle\Entity\Order $workorder)
+    {
+        $this->workorders[] = $workorder;
+
+        return $this;
+    }
+
+    /**
+     * Remove workorder
+     *
+     * @param \AppBundle\Entity\Order $workorder
+     */
+    public function removeWorkorder(\AppBundle\Entity\Order $workorder)
+    {
+        $this->workorders->removeElement($workorder);
+    }
+
+    /**
+     * Get workorders
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getWorkorders()
+    {
+        return $this->workorders;
     }
 }

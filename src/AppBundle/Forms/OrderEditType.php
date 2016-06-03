@@ -29,7 +29,7 @@ class OrderEditType extends AbstractType
 
     public function configureOptions(optionsResolver $resolver)
     {
-        $resolver->setDefaults(array('data_class'=>'AppBundle\Entity\Order',));
+        $resolver->setDefaults(array('data_class'=>'AppBundle\Entity\WorkOrder',));
     }
 
 }

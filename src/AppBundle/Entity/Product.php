@@ -33,6 +33,12 @@ class Product
      * @ORM\JoinTable(name="warehouse_products")
      */
     protected $warehouses;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="WorkOrder", inversedBy="products")
+     * @ORM\JoinTable(name="order_products")
+     */
+    protected $workorder;
     
    
     /**
@@ -124,5 +130,29 @@ class Product
         $this->id = $id;
 
         return $this;
+    }
+
+    /**
+     * Set workorder
+     *
+     * @param \AppBundle\Entity\Order $workorder
+     *
+     * @return Product
+     */
+    public function setWorkorder(\AppBundle\Entity\Order $workorder = null)
+    {
+        $this->workorder = $workorder;
+
+        return $this;
+    }
+
+    /**
+     * Get workorder
+     *
+     * @return \AppBundle\Entity\Order
+     */
+    public function getWorkorder()
+    {
+        return $this->workorder;
     }
 }

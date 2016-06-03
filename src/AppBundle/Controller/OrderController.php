@@ -8,7 +8,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Order;
+use AppBundle\Entity\WorkOrder;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,11 +27,11 @@ class OrderController extends Controller
      */
     public function OrderListAction()
     {
-        $orders = $this->getDoctrine()
-            ->getRepository('AppBundle:Order')
+        $workorders = $this->getDoctrine()
+            ->getRepository('AppBundle:WorkOrder')
             ->findAll();
         return $this->render("List/Order.html.twig",array(
-            "orders"=>$orders
+            "workorders"=>$workorders
         ));
     }
     
@@ -41,9 +41,9 @@ class OrderController extends Controller
      */
     public function OrderAddAction(Request $request)
     {
-        $order = new Order();
-        $order->setCreated(new \DateTime("now"));
-        return $this->handleForm($request, $order, OrderNewType::class);
+        $workorder = new WorkOrder();
+        $workorder->setCreated(new \DateTime("now"));
+        return $this->handleForm($request, $workorder, OrderNewType::class);
     }
 
     /**
@@ -54,13 +54,13 @@ class OrderController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $order = $em->getRepository('AppBundle:Order')
+        $workorder = $em->getRepository('AppBundle:WorkOrder')
             ->find($id);
-        if($order === null)
+        if($workorder === null)
         {
             throw $this->createNotFoundException();
         }
-        $em->remove($order);
+        $em->remove($workorder);
         $em->flush();
         return $this->redirectToRoute('order_list');
 
@@ -73,24 +73,24 @@ class OrderController extends Controller
 
     public function OrderEditAction(Request $request, $id)
     {
-        $order = $this->getDoctrine()->getRepository('AppBundle:Order')->find($id);
+        $workorder = $this->getDoctrine()->getRepository('AppBundle:WorkOrder')->find($id);
 
-        if($order === null)
+        if($workorder === null)
         {
             throw $this->createNotFoundException();
         }
-        return $this->handleForm($request, $order, OrderEditType::class);
+        return $this->handleForm($request, $workorder, OrderEditType::class);
     }
 
-    private function handleForm(Request $request, Order $order, $formClass)
+    private function handleForm(Request $request, WorkOrder $workOrder, $formClass)
     {
-        $form = $this->createForm($formClass, $order);
+        $form = $this->createForm($formClass, $workOrder);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($order);
+            $em->persist($workOrder);
             $em->flush();
             return $this->redirectToRoute('order_list');
         }

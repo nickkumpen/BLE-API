@@ -31,6 +31,12 @@ class Warehouse
      * @ORM\ManyToMany(targetEntity="Product", mappedBy="warehouses")
      */
     protected $products;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="WorkOrder", inversedBy="warehouses")
+     * @ORM\JoinTable(name="order_warehouses")
+     */
+    protected $workorder;
     
     /**
      * Constructor
@@ -120,5 +126,29 @@ class Warehouse
         $this->id = $id;
 
         return $this;
+    }
+
+    /**
+     * Set workorder
+     *
+     * @param \AppBundle\Entity\Order $workorder
+     *
+     * @return Warehouse
+     */
+    public function setWorkorder(\AppBundle\Entity\Order $workorder = null)
+    {
+        $this->workorder = $workorder;
+
+        return $this;
+    }
+
+    /**
+     * Get workorder
+     *
+     * @return \AppBundle\Entity\Order
+     */
+    public function getWorkorder()
+    {
+        return $this->workorder;
     }
 }
