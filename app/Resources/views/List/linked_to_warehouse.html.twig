@@ -1,53 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Products!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <style>
-        table {
-            width:%;
-        }
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: left;
-        }
-        table#t01 tr:nth-child(even) {
-            background-color: #eee;
-        }
-        table#t01 tr:nth-child(odd) {
-            background-color:#fff;
-        }
-        table#t01 th	{
-            background-color: black;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-{% block body %}
-    <a href="{{ path('login') }}">Login</a><br/>
-    <a href="{{ path('product_list') }}">Products</a><br/>
-    <a href="{{ path('warehouse_list') }}">Warehouses</a><br/>
-    <a href="{{ path('user_registration') }}">Register</a><br/>
+{% extends '::base.html.twig' %}
 
-    <table id="t01">
-        <tr>
-            <th>Datum</th>
-            <th>Warehouse</th>
-        </tr>
-        {% for Warehouse in linked %}
-            <tr>
-                <td>{{ Warehouse.products }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+{% block title %}
+    <title>Warehouses</title>
 {% endblock %}
-{% block javascripts %}{% endblock %}
-</body>
-</html>
+
+{% block body %}
+    <h1>Warehouses</h1>
+    {% block table %}
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Beacon UUID</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td>{{ product.name}} </td>
+                            <td>{{ product.id }}</td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endblock %}
+    <br/>
+{% endblock %}

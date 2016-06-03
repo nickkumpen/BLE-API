@@ -23,7 +23,7 @@
                     <tr>
                         <td>{{ warehouse.name}} </td>
                         <td><a href="{{ path('warehouse_edit',{'id':warehouse.id}) }}">{{ warehouse.id }}</a></td>
-                        <td>{{ warehouse.products.count }}</td>
+                        <td><a href="{{ path('warehouse_linked',{'id':warehouse.id}) }}">{{ warehouse.products.count }}</td>
                         <td><a href="{{ path('warehouse_edit',{'id':warehouse.id}) }}"><span class="glyphicon glyphicon-wrench" aria-hidden=true></span></a>
                         </td>
                     </tr>
