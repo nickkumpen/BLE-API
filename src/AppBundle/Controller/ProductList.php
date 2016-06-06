@@ -128,7 +128,8 @@ class ProductList extends Controller
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            if ($product->getId() && $form->get('warehouse')) {
+            if ($product->getId() && $form->get('warehouse')) 
+            {
                 $product->getWarehouses()->clear();
                 $product->getWarehouses()->add($form->get('warehouse')->getData());
             }

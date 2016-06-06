@@ -88,7 +88,12 @@ class OrderController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            if ($workOrder->getId() && $form->get('job'))
+            {
+                $workOrder->getJob()->add($form->get('job')->getData());
+            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($workOrder);
             $em->flush();
