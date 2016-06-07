@@ -35,6 +35,29 @@ class OrderNewType extends AbstractType
                 'mapped' => false,
 
             ))
+            ->add('warehouse', EntityType::class, array(
+                'class'=>'AppBundle\Entity\Warehouse',
+                'query_builder'=> function (EntityRepository $er){
+                    return $er->createQueryBuilder('u')
+                        ->orderBy('u.name','ASC');
+                },
+                'choice_label'=>'name',
+                'mapped' => false,
+
+            ))
+            ->add('product', EntityType::class, array(
+                'class'=>'AppBundle\Entity\Product',
+                'query_builder'=> function (EntityRepository $er){
+                    return $er->createQueryBuilder('u')
+                        ->orderBy('u.name','ASC');
+                },
+                'choice_label'=>'name',
+                'mapped' => false,
+                'expanded' => false,
+                'multiple' => false,
+
+            ))
+            
             ->add('save', SubmitType::class, array('label'=>'Submit Order'));
     }
 

@@ -293,4 +293,9 @@ class WorkOrder
     {
         return $this->products;
     }
+
+    public function getProductsCollection()
+    {
+        return $this->products;
+    }
 }

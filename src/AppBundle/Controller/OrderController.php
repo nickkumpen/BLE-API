@@ -18,6 +18,8 @@ use AppBundle\Forms\OrderNewType;
 use AppBundle\Forms\OrderEditType;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\DateTime;
+use AppBundle\Entity\Product;
+use AppBundle\Entity\Warehouse;
 
 class OrderController extends Controller
 {
@@ -90,9 +92,18 @@ class OrderController extends Controller
 
         if ($form->isSubmitted() && $form->isValid())
         {
+
             if ($workOrder->getId() && $form->get('job'))
             {
-                $workOrder->getJob()->add($form->get('job')->getData());
+                $workOrder->setJob($form->get('job')->getData());
+            }
+            if ($workOrder->getId() && $form->get('warehouse'))
+            {
+                $workOrder->addWarehouse($form->get('warehouse')->getData());
+            }
+            if ($workOrder->getId() && $form->get('ProductsCollection'))
+            {
+                $workOrder->addProduct($form->get('ProductsCollection')->getData());
             }
             $em = $this->getDoctrine()->getManager();
             $em->persist($workOrder);

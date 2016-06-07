@@ -24,15 +24,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for order in workorders %}
+                    {% for workorder in workorders %}
                         <tr>
-                            <td>{{ workorders.name }}</td>
-                            <td>{{ workorders.description }}</td>
-                            <td>{{ workorders.start|date('d/m/Y') }}</td>
-                            <td>{{ workorders.end|date('d/m/Y') }}</td>
-                            <td>{{ workorders.created|date('d/m/Y H:i:s') }}</td>
-                            <td><a href="{{ path('order_edit',{'id':workorders.id}) }}"><span class="glyphicon glyphicon-wrench" aria-hidden=true></span></a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('order_drop',{'id':workorders.id}) }}"><span class="glyphicon glyphicon-remove" aria-hidden=true></span></a>
+                            <td>{{ workorder.name }}</td>
+                            <td>{{ workorder.description }}</td>
+                            <td>{{ workorder.start|date('d/m/Y') }}</td>
+                            <td>{{ workorder.end|date('d/m/Y') }}</td>
+                            <td>{{ workorder.created|date('d/m/Y H:i:s') }}</td>
+                            <td><a href="{{ path('order_edit',{'id':workorder.id}) }}"><span class="glyphicon glyphicon-wrench" aria-hidden=true></span></a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('order_drop',{'id':workorder.id}) }}"><span class="glyphicon glyphicon-remove" aria-hidden=true></span></a>
                             </td>
                         </tr>
                     {% endfor %}

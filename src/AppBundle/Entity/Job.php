@@ -289,14 +289,16 @@ class Job
         $this->workorders = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+
     /**
      * Add workorder
      *
-     * @param \AppBundle\Entity\Order $workorder
+     * @param \AppBundle\Entity\WorkOrder $workorder
      *
      * @return Job
      */
-    public function addWorkorder(\AppBundle\Entity\Order $workorder)
+    public function addWorkorder(\AppBundle\Entity\WorkOrder $workorder)
     {
         $this->workorders[] = $workorder;
 
@@ -306,9 +308,9 @@ class Job
     /**
      * Remove workorder
      *
-     * @param \AppBundle\Entity\Order $workorder
+     * @param \AppBundle\Entity\WorkOrder $workorder
      */
-    public function removeWorkorder(\AppBundle\Entity\Order $workorder)
+    public function removeWorkorder(\AppBundle\Entity\WorkOrder $workorder)
     {
         $this->workorders->removeElement($workorder);
     }
