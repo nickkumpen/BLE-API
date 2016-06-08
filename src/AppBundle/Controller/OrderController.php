@@ -46,7 +46,7 @@ class OrderController extends Controller
         $workorders = $this->getDoctrine()
             ->getRepository('AppBundle:WorkOrder')
             ->findAll();
-        return $this->render("List/Order.html.twig",array(
+        return $this->render("List/WorkOrder.html.twig",array(
             "workorders"=>$workorders
         ));
 
@@ -112,15 +112,21 @@ class OrderController extends Controller
             {
                 $workOrder->setJob($form->get('job')->getData());
             }
+
             if ($workOrder->getId() && $form->get('warehouse'))
             {
-                $workOrder->getWarehouses()->add($form->get('warehouse')->getData());
+                foreach ($form->get('warehouse')->getData() as $warehouse)
+                {
+                    $workOrder->addWarehouse($warehouse);
+                    $warehouse->setWorkOrder($workOrder);
+                }
+
             }
             if ($workOrder->getId() && $form->get('product'))
             {
-                dump($form->get('product')->getData());
 
-                foreach ($form->get('product')->getData() as $product){
+                foreach ($form->get('product')->getData() as $product)
+                {
                     $workOrder->addProduct($product);
                     $product->setWorkOrder($workOrder);
                 };

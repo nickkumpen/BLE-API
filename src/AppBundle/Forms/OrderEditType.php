@@ -44,6 +44,9 @@ class OrderEditType extends AbstractType
                 },
                 'choice_label'=>'name',
                 'mapped' => false,
+                'expanded' => true,
+                'multiple' => true,
+
 
             ))
             ->add('product', EntityType::class, array(

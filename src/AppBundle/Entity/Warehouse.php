@@ -130,11 +130,11 @@ class Warehouse
     /**
      * Set workorder
      *
-     * @param \AppBundle\Entity\Order $workorder
+     * @param \AppBundle\Entity\WorkOrder $workorder
      *
      * @return Warehouse
      */
-    public function setWorkorder(\AppBundle\Entity\Order $workorder = null)
+    public function setWorkorder(\AppBundle\Entity\WorkOrder $workorder = null)
     {
         $this->workorder = $workorder;
 
@@ -144,7 +144,7 @@ class Warehouse
     /**
      * Get workorder
      *
-     * @return \AppBundle\Entity\Order
+     * @return \AppBundle\Entity\WorkOrder
      */
     public function getWorkorder()
     {
