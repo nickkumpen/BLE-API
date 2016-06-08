@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html>
+{% extends '::base.html.twig' %}
+{% block title %}
+    <title>Products</title>
+{% endblock %}
+
+{% block body %}
+    {% block table %}
 
 <h1 STYLE="text-align: right;">WORKORDER</h1>
 <img src="{{ asset('images/logo3.png') }}" alt="Asset Tracking" align="left" style="width:200px;height:209px;">
-<P STYLE="text-align: left;"><br/>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<P STYLE="text-align: left;">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 Agoralaan<br/>
 3590, Diepenbeek<br/>
 0475/11.15.19<br/>
@@ -13,52 +24,30 @@ BE0456.987.123<br/>
 
 
 
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for workorder in info %}
+                <tr>
+                    <td>{{ workorder.description }}</td>
+                    <td>{{ workorder.start|date('d/m/Y') }}</td>
+                    <td>{{ workorder.end|date('d/m/Y') }}</td>
+                    <td>{{ workorder.job.address }}</td>
+                </tr>
+                {% endfor %}
 
-
-
-<head>
-    <style>
-        table {
-            width:100%;
-        }
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: left;
-        }
-        table#t01 tr:nth-child(even) {
-            background-color: #eee;
-        }
-        table#t01 tr:nth-child(odd) {
-            background-color:#fff;
-        }
-        table#t01 th {
-            background-color: black;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-<table id="t01">
-    <tr>
-        <th>Description</th>
-        <th>Start</th>
-        <th>End</th>
-        <th>Address</th>
-    </tr>
-    {% for workorder in workorders %}
-    <tr>
-        <td>{{ workorder.description }}</td>
-        <td>{{ workorder.start|date('d/m/Y') }}</td>
-        <td>{{ workorder.end|date('d/m/Y') }}</td>
-        <td>{{ workorder.job.address }}</td>
-    </tr>
-    {% endfor %}
-
-</table>
-
-</body>
-</html>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+{% endblock %}

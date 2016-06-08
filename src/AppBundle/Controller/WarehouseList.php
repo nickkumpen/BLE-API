@@ -37,6 +37,7 @@ class WarehouseList extends Controller
 
     /**
      * @Route("/warehouselist/{id}", name="warehouse_linked")
+     * @Security("has_role('ROLE_MODERATOR')")
      */
     public function linkedAction(Request $request, $id)
     {

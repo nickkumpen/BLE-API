@@ -36,18 +36,19 @@ class OrderController extends Controller
             "workorders"=>$workorders
         ));
     }
+
     /**
      * @Route("/orderinfo/{id}", name="order_info")
      * @Security("has_role('ROLE_USER')")
      */
-    public function InfoListAction()
+    public function infoListAction(Request $request, $id)
     {
 
-        $workorders = $this->getDoctrine()
+        $info = $this->getDoctrine()
             ->getRepository('AppBundle:WorkOrder')
-            ->findAll();
+            ->find($id);
         return $this->render("List/WorkOrder.html.twig",array(
-            "workorders"=>$workorders
+            "info"=>$info
         ));
 
     }
