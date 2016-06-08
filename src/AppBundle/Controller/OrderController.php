@@ -36,6 +36,21 @@ class OrderController extends Controller
             "workorders"=>$workorders
         ));
     }
+    /**
+     * @Route("/orderinfo/{id}", name="order_info")
+     * @Security("has_role('ROLE_USER')")
+     */
+    public function InfoListAction()
+    {
+
+        $workorders = $this->getDoctrine()
+            ->getRepository('AppBundle:WorkOrder')
+            ->findAll();
+        return $this->render("List/Order.html.twig",array(
+            "workorders"=>$workorders
+        ));
+
+    }
     
     /**
      * @Route("/order_add", name="order_add")
@@ -99,12 +114,18 @@ class OrderController extends Controller
             }
             if ($workOrder->getId() && $form->get('warehouse'))
             {
-                $workOrder->addWarehouse($form->get('warehouse')->getData());
+                $workOrder->getWarehouses()->add($form->get('warehouse')->getData());
             }
-            if ($workOrder->getId() && $form->get('ProductsCollection'))
+            if ($workOrder->getId() && $form->get('product'))
             {
-                $workOrder->addProduct($form->get('ProductsCollection')->getData());
+                dump($form->get('product')->getData());
+
+                foreach ($form->get('product')->getData() as $product){
+                    $workOrder->addProduct($product);
+                    $product->setWorkOrder($workOrder);
+                };
             }
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($workOrder);
             $em->flush();

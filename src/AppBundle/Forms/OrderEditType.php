@@ -46,7 +46,7 @@ class OrderEditType extends AbstractType
                 'mapped' => false,
 
             ))
-            ->add('ProductsCollection', EntityType::class, array(
+            ->add('product', EntityType::class, array(
                 'class'=>'AppBundle\Entity\Product',
                 'query_builder'=> function (EntityRepository $er){
                     return $er->createQueryBuilder('u')

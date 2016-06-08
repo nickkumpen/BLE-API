@@ -34,7 +34,6 @@ class Warehouse
 
     /**
      * @ORM\ManyToOne(targetEntity="WorkOrder", inversedBy="warehouses")
-     * @ORM\JoinTable(name="order_warehouses")
      */
     protected $workorder;
     

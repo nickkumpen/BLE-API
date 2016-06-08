@@ -36,7 +36,6 @@ class Product
 
     /**
      * @ORM\ManyToOne(targetEntity="WorkOrder", inversedBy="products")
-     * @ORM\JoinTable(name="order_products")
      */
     protected $workorder;
     
@@ -135,11 +134,11 @@ class Product
     /**
      * Set workorder
      *
-     * @param \AppBundle\Entity\Order $workorder
+     * @param \AppBundle\Entity\WorkOrder $workorder
      *
      * @return Product
      */
-    public function setWorkorder(\AppBundle\Entity\Order $workorder = null)
+    public function setWorkorder(\AppBundle\Entity\WorkOrder $workorder = null)
     {
         $this->workorder = $workorder;
 
@@ -149,7 +148,7 @@ class Product
     /**
      * Get workorder
      *
-     * @return \AppBundle\Entity\Order
+     * @return \AppBundle\Entity\WorkOrder
      */
     public function getWorkorder()
     {

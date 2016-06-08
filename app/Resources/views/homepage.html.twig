@@ -1,0 +1,38 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body%}
+    <h1>Home</h1>
+
+
+    <P STYLE="text-align: center;"><img src="{{ asset('images/collision.png') }}" alt="Asset Tracking" style="width:600px;height:363px;"></P>
+
+    <br/>
+    Dit online portaal is tot stand gekomen tijdens een bachelorproef van een PXL student in samenwerking met Didean bvba en Crossroad Communications nv.
+    De bachelorproef gaat over het opzetten van een Asset Tracking systeem voor servicebedrijven.
+    <br/>
+    Als servicebedrijf heeft men vaak een grote inventaris met allerlei
+    groot en klein materiaal. Vanaf het moment dat het materiaal wordt uitgezonden naar werven is het vaak zeer moeilijk om het nog te volgen en terug te vinden.
+    Dit heeft als gevolg dat er in noodsituaties veel tijd verloren gaat aan het opsporen van het nodige materiaal, en wanneer de tijdsdruk te hoog is moet er vaak
+    nieuw materiaal worden aangekocht. Deze bachelorproef gaat over het aanpakken van dat probleem met een goed digitaal Asset Tracking systeem.
+    <br/><br/>
+    Een aantal verschillende mogelijkheden om deze Tracking te realiseren dienen zich aan. Zo is er de welbekende RFID, NFC en BLE (Bluetooth Low Energy). We focussen
+    ons momenteel vooral op het laatste omdat recente ontwikkelingen rond iBeacons een lange levensduur en een steeds toenemend aantal toepassingen mogelijk maken.
+    Er zijn voorspellingen die aangeven dat in 2018 90% van alle smartphones uitgerust zullen zijn met BLE waardoor het mogelijk zal zijn ook via deze apparaten de
+    opvolging van bedrijfsmateriaal te garanderen.
+    <br/><br/>
+    <P STYLE="text-align: center;"><img src="{{ asset('images/stage Nick.png') }}" alt="Asset Drawing" style="width:400px;height:188px;"></P>
+    Asset Tracking wil een steeds actueel beeld geven van alle grote bedrijfsmaterialen, de locatie ervan en de status (in gebruik of niet). We concentreren ons in een
+    eerste fase op het opvolgen van de materialen in kwestie door een ontvanger in het magazijn en de bestelwagens te plaatsen die de aanwezigheid van iBeacons op die
+    locatie doorgeeft aan de server van het bedrijf in kwestie. We voorzien ook de nodige toepassingssoftware om deze gegevens overal en in realtime op te volgen en
+    leesbaar weer te geven.
+    <br/><br/>
+    Dit heeft als resultaat dat men veel sneller alle materiaal kan lokaliseren in geval van nood. Dat resulteert in een grote kostenbesparing, denk maar aan de schade
+    die beperkt word, werknemers die niet onnodig gestoord worden in hun werk, geen overbodige investeringen,...
+    <br/>
+    Daarnaast kan ook voor het personeeel een planning opgesteld worden waardoor ze weten welk materiaal ze wanneer moeten meenemen uit het magazijn. Er kan dan ook
+    aangegeven worden wanneer materiaal terug naar het magazijn moet komen voor een keuring of onderhoud.
+{% endblock %}
