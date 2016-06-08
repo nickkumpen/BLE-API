@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b882e4af-e5c6-4d6d-9d1b-c8351cfad858" name="Default" comment="anonymouspage added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/collision.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/stage Nick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/homepage.html.twig" />
+    <list default="true" id="b882e4af-e5c6-4d6d-9d1b-c8351cfad858" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AnonymousController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AnonymousController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/OrderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Warehouse.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Warehouse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Forms/OrderEditType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Forms/OrderEditType.php" />
     </list>
     <ignored path="two.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -761,7 +753,7 @@
       <workItem from="1464766900077" duration="12497000" />
       <workItem from="1464789174691" duration="10827000" />
       <workItem from="1464862084418" duration="47157000" />
-      <workItem from="1465368315008" duration="10923000" />
+      <workItem from="1465368315008" duration="10939000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1458736708696</created>
@@ -1022,11 +1014,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465308748641</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="anonymouspage added">
+      <created>1465386008264</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1465386008286</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="409759000" />
+    <option name="totallyTimeSpent" value="409775000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1115,7 +1114,8 @@
     <MESSAGE value="orderlist, orderadding, oderediting&#10;" />
     <MESSAGE value="product in a warehouse available&#10;" />
     <MESSAGE value="Order refactored to WorkOrder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Order refactored to WorkOrder" />
+    <MESSAGE value="anonymouspage added" />
+    <option name="LAST_COMMIT_MESSAGE" value="anonymouspage added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
