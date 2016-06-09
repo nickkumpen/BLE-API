@@ -33,6 +33,7 @@
                             <td>{{ workorder.created|date('d/m/Y H:i:s') }}</td>
                             <td><a href="{{ path('order_edit',{'id':workorder.id}) }}"><span class="glyphicon glyphicon-wrench" aria-hidden=true></span></a>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('order_drop',{'id':workorder.id}) }}"><span class="glyphicon glyphicon-remove" aria-hidden=true></span></a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('order_info',{'id':workorder.id}) }}"><span class="glyphicon glyphicon-info-sign" aria-hidden=true></span></a>
                             </td>
                         </tr>
                     {% endfor %}
