@@ -53,7 +53,7 @@
                 <li><a href="{{ path('product_list') }}">Products</a></li>
                 <li><a href="{{ path('warehouse_list') }}">Warehouses</a></li>
                 <li><a href="{{ path('user_registration') }}">Register</a></li>
-                <li><a href="{{ path('user_list') }}">Users</a></li>
+                {% if is_granted('ROLE_MODERATOR') %}<li><a href="{{ path('user_list') }}">Users</a></li>{% endif %}
             </ul>
         </div><!--/.nav-collapse -->
     </div>

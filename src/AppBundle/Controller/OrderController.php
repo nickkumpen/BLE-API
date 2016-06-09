@@ -47,8 +47,13 @@ class OrderController extends Controller
         $info = $this->getDoctrine()
             ->getRepository('AppBundle:WorkOrder')
             ->find($id);
+        $products = $info->getProducts();
+        $warehouses= $info->getWarehouses();
         return $this->render("List/WorkOrder.html.twig",array(
-            "info"=>$info
+            "info"=>$info,
+            "products"=>$products,
+            "warehouses"=>$warehouses
+            
         ));
 
     }

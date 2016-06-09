@@ -6,21 +6,17 @@
 {% block body %}
     {% block table %}
 
-<h1 STYLE="text-align: right;">WORKORDER</h1>
-<img src="{{ asset('images/logo3.png') }}" alt="Asset Tracking" align="left" style="width:200px;height:209px;">
-<P STYLE="text-align: left;">
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+<h1 class="pull-right"style="text-align: right">WORKORDER<br/><small><small>W.O.#: {{ info.id }}<br/>Created: {{ info.created|date('d/m/Y') }}</small></small></h1>
+
+<p>
+<img src="{{ asset('images/logo3.png') }}" alt="Asset Tracking" style="width:150px;height:157px;">
+            <br/>
+<small>
 Agoralaan<br/>
 3590, Diepenbeek<br/>
 0475/11.15.19<br/>
 BE0456.987.123<br/>
-</P>
+</small></p>
 
 
 
@@ -36,18 +32,59 @@ BE0456.987.123<br/>
                 </tr>
             </thead>
             <tbody>
-                {% for workorder in info %}
                 <tr>
-                    <td>{{ workorder.description }}</td>
-                    <td>{{ workorder.start|date('d/m/Y') }}</td>
-                    <td>{{ workorder.end|date('d/m/Y') }}</td>
-                    <td>{{ workorder.job.address }}</td>
+                    <td>{{ info.description }}</td>
+                    <td>{{ info.start|date('d/m/Y') }}</td>
+                    <td>{{ info.end|date('d/m/Y') }}</td>
+                    <td>{{ info.job.address }}</td>
                 </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Warehouse</th>
+                <th>Numberplate</th>
+             </tr>
+            </thead>
+            <tbody>
+            {% for warehouse in warehouses %}
+                    <tr>
+                        <td>{{ warehouse.name }}</td>
+                        <td>{{ warehouse.id }}</td>
+                    </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>UUID</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.id }}</td>
+                    </tr>
                 {% endfor %}
-
             </tbody>
         </table>
     </div>
 </div>
 {% endblock %}
+    <button onclick="myFunction()"class="btn btn-lg btn-info hidden-print" >Print workorder</button>
+    <script>
+        function myFunction() {
+            window.print();
+        }
+    </script>
 {% endblock %}
